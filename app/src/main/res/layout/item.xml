@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12.0dp">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+                android:id="@+id/imageView_item"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/ic_check_circle_blue_24dp"/>
+        <!--<ImageView-->
+        <!--android:id="@+id/imageView_select"-->
+        <!--android:layout_width="48dp"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_alignEnd="@id/imageView_item"-->
+        <!--android:layout_below="@id/imageView_item"-->
+        <!--android:visibility="invisible"-->
+        <!--app:srcCompat="@drawable/ic_check_circle_blue_24dp"/>-->
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_save"
+                android:layout_width="128dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/imageView_item"
+                android:layout_margin="8dp"
+                android:text="@string/button_label"
+                android:textColor="@color/colorTextOnPrimary"
+                app:icon="@drawable/ic_save_24dp"
+                app:iconTint="@color/colorAccent"
+                app:cornerRadius="12dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/colorAccent"
+                app:rippleColor="@android:color/white"/>
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
