@@ -5,6 +5,4 @@ object Constants {
     // Preferences
     const val FIRST_RUN = "xyz.absolutez3ro.whatsappstatussaver.FIRST_RUN"
     const val EXTERNAL_URI_KEY = "xyz.absolutez3ro.whatsappstatussaver.EXTERNAL_URI_KEY"
-    const val SOURCE_DIRECTORY = "/WhatsApp/Media/.Statuses/"
-    const val DESTINATION_DIRECTORY = "/Pictures/WhatsApp Status/"
 }

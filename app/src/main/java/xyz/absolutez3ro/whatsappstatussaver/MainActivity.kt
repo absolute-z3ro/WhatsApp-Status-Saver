@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.documentfile.provider.DocumentFile
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,14 +13,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import xyz.absolutez3ro.whatsappstatussaver.adapter.PhotoAdapter
-import xyz.absolutez3ro.whatsappstatussaver.model.Photo
 import xyz.absolutez3ro.whatsappstatussaver.utility.Constants
 import xyz.absolutez3ro.whatsappstatussaver.utility.FileHelper
 import xyz.absolutez3ro.whatsappstatussaver.utility.PreferenceHelper
 
 class MainActivity : AppCompatActivity() {
 
-    private var photoList: ArrayList<Photo> = ArrayList()
+    private var photoList: ArrayList<DocumentFile> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +59,10 @@ class MainActivity : AppCompatActivity() {
                 contentResolver.takePersistableUriPermission(uri, takeFlags)
                 PreferenceHelper.putBoolean(this, Constants.FIRST_RUN, false)
                 setRecyclerView()
-            } else PreferenceHelper.putString(this, Constants.EXTERNAL_URI_KEY, "")
+            } else {
+                PreferenceHelper.putString(this, Constants.EXTERNAL_URI_KEY, "")
+                showPermissionDialog()
+            }
         }
     }
 
